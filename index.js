@@ -247,7 +247,7 @@ app.get("/listing/:id", asyncwrap(async (req,res)=>{
         res.redirect("/listings")
        }
         
-       res.render("./listing/Show.ejs",{list})
+       res.render("./listing/show.ejs",{list})
        
         }))
     
