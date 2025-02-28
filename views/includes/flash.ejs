@@ -1,0 +1,15 @@
+
+<!-- //we mention if loop for that the array in flash is > 0 we need to execute -->
+
+<% if (successbhai.length > 0) { %>
+    <div class="alert alert-success alert-dismissible fade show offset-3 col-6"><%= successbhai %>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+<!-- //error -->
+<% if (errorbhai.length > 0) { %>
+    <div class="alert alert-danger alert-dismissible fade show offset-3 col-6"><%= errorbhai %>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>

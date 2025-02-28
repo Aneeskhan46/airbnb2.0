@@ -1,0 +1,159 @@
+body{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+
+}
+
+/* it makes footer stick at bottom */
+.con{
+    flex: 1;
+}
+
+
+.navbar{
+    height:5rem;
+}
+
+.fa-plane-departure{
+    color:#fe424d;
+    font-size: 2rem;
+    
+}
+
+.footer{
+    background-color:gainsboro;
+    color: black;
+    text-align: center;
+
+}
+
+.icon{
+    font-size: 1.5rem;
+    padding-top: 10px;
+}
+
+.fa-facebook{
+    color: rgb(25, 106, 218);
+}
+
+.fa-instagram{
+   color: rgb(184, 21, 171);
+}
+
+.fa-youtube{
+    color:#fe424d;
+}
+
+.links{
+    padding-bottom: 10px;
+}
+
+.card{
+    display: inline-block;
+    justify-content: space-evenly;
+    
+    margin-bottom: 100px;
+    margin-left: 10px;
+    
+    height: 390px;
+    border-radius: 10px;
+
+}
+
+.card-img-top{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+    height: 20rem;
+ 
+}
+
+a {
+    
+    color: black;
+    text-decoration: none;
+    
+}
+
+a:hover {
+    opacity: 0.8;
+    color:#00A0C6; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+.form{
+    background-color: antiquewhite;
+    width: 100%;
+   
+    
+    }
+
+.bootstrap{
+    display: flex;
+   background-color: blue; 
+   border: 2px solid black;
+   height: 100px;
+   
+}
+
+/* show */
+.imageedit{
+    height: 300px;
+    
+    
+}
+
+.filters{
+     margin-left: 0.5rem;
+     display: flex;
+     align-items: center;
+     
+ 
+}
+
+.filt{
+    margin-left: 2.5rem;
+    text-align: center;
+    font-size: 0.7rem;
+    
+    
+}
+
+.filt:hover{
+    color: red;
+    
+}
+
+.form-check{
+    margin-left: 7rem;
+    font-weight: 900;
+  
+}
+/* search box */
+.d-flex{
+    margin-left: 15rem;
+}
+
+.search-btn{
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    border-radius: 1rem;
+    margin-left: 0.5rem;
+    
+}
+
+/* //display:inline  it is to make seach icon and search para in centre  */
+.search-btn i{
+    display: inline;
+    margin-right: 0.2rem;
+}
+
+.form-control{
+    border-radius: 5rem;
+}
+
+

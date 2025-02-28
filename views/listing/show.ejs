@@ -1,0 +1,156 @@
+
+<% layout("/layout/boilerplate.ejs") -%>
+<body>
+    <!-- <h2>show anees</h2>   <a href="/listings">back to listing</a>
+
+    <h2><%= list.title %></h2>
+    <h2><%= list.description %></h2>
+    <h2>&#8377; <%= list.price.toLocaleString("en-IN") %></h2>
+    <h2><%= list.location %></h2>
+    <h2><%= list.country %></h2>
+    <h2><%= list.image %></h2>
+
+    <a href="/listing/<%= list._id %>/edit">Edit</a>
+
+    <form method="post" action="/listing/<%= list._id %>?_method=DELETE">
+        <button>delete</button>
+    </form>
+
+ -->
+
+<!-- //delete -->
+ 
+
+
+
+   <div  class="row-col-md-3 offset-3" >
+     <div class="col-8 offset-1" >
+        
+        <img class="imageedit" src="<%=list.image.url%> " >
+           <br>
+       <b><i><%= list.owner.username %></i></b>
+           <br><br>
+       <b><P><%= list.title %></P></b>
+       <P><%=list.description  %></P>
+       <P>&#8377;<%= list.price.toLocaleString("en-IN") %></P>
+       <P><%=list.location %></P>
+       <P><%=list.country %> </P>  
+
+       <!-- 
+       //authorization for edit and delete button ,,,, curruser means req.user see the res.locals in index.js file--> 
+        <!--////<%/// if(curruser &&curruser._id.equals(list.owner._id)) {%> -->
+
+       <div style="display: flex; justify-content: space-evenly;">
+         <form method="get" action="/listing/<%= list._id %>/edit">
+            <button class="btn btn-dark">Edit</button>
+           </form>
+           <form method="post" action="/listing/<%= list._id %>?_method=DELETE">
+            <button class="btn-danger">delete</button>
+           </form>
+       </div>
+   
+      
+    </div>
+   </div>
+
+ <hr>
+
+
+   
+
+<!-- //reviews -->
+
+ <!--////<%/// if(curruser &&curruser._id.equals(list.owner._id)) {%> -->
+    <h2 class="row offset-2">reviews</h2>
+         <br>
+         <div class="form" class="row offset-2" >
+          <form class="offset-3 needs-validation"  method="post" action="/listing/<%= list._id %>/review"  novalidate >
+             
+           
+              
+            <!-- //starability-slot from github  , add styling -->
+            <fieldset class="starability-slot">
+              <legend> please rate :</legend>
+              <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+              <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+              <label for="first-rate1" title="Terrible">1 star</label>
+              <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+              <label for="first-rate2" title="Not good">2 stars</label>
+              <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+              <label for="first-rate3" title="Average">3 stars</label>
+              <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+              <label for="first-rate4" title="Very good">4 stars</label>
+              <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+              <label for="first-rate5" title="Amazing">5 stars</label>
+            </fieldset>
+
+
+
+
+              <div class="col-md-6">
+                <label for="inputAddress" class="form-label">comment</label>
+                <textarea type="text" class="form-control" name="review[comment]" placeholder="enter your comment" required></textarea>
+                  <div class="invalid-feedback">
+                  Please provide a valid description.
+                  </div>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+              </div>
+              <br> 
+          
+              <br> 
+              <button class="btn btn-dark">Submit</button>
+            </form>
+          </div>
+       
+            <br>
+        
+<hr>
+  <h2>ALL REVIEWS</h2>
+   
+<br><br><br>
+<div class="row row-cols-md-3 offset-2 "  >
+<% for(let review of list.review){%>
+    <div class="card text-dark bg-light mb-3 " style="width: 300px; margin: 10px; ;" >
+      <!-- //delete button -->
+       <form method="post" action="/listing/<%= list._id %>/review/<%= review._id %>?_method=delete">
+          <button class="btn-dark">DELETE</button>
+       </form>
+     <div class="card-header">review</div>
+      <div class="card-body">
+        <h2 class="card-title">@<%= review.owner.username %></h2>
+        
+        <p class="starability-result card-text" data-rating=<%= review.rating %>></p>
+        <p class="card-text"><%= review.comment %></p>
+        <br>
+         <label><B>Date:</B></label>
+         <p class="card-text"><%= review.createdAt %></p>
+      </div>
+     </div>
+ 
+<% } %>
+</div>
+
+
+<hr>
+
+<!-- <h2>ALL REVIEWS</h2>
+
+<br><br><br>
+<div class="row row-cols-md-3">
+  <% for (let review of list.review) { %>
+    <div class="card text-dark bg-warning mb-3" style="width: 300px; margin: 10px;">
+      <div class="card-header">Review</div>
+      <div class="card-body">
+        <h5 class="card-title"><%= review.rating %>&#9734;</h5>
+        <p class="card-text"><%= review.comment %></p>
+        <br>
+        <label><b>Date:</b></label>
+        <p class="card-text"><%= new Date(review.createdAt).toLocaleDateString() %></p>
+      </div>
+    </div>
+  <% } %>
+</div> -->
+
+</body>

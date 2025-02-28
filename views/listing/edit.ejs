@@ -1,0 +1,57 @@
+
+<% layout("/layout/boilerplate.ejs") -%>
+
+<body>
+
+
+
+    <h2>Edit</h2>
+    <div class="row row-col-md-3 offset-3">
+    <form method="post"  action="/listing/<%=list._id%>?_method=PUT" enctype="multipart/form-data">
+        
+        <input type="text"  name="listing[title]" value="<%=list.title%>">
+        <br>
+        <textarea type="text"  name="listing[description]"> <%=list.description%></textarea>
+        <br>
+        <input type="number"  name="listing[price]" value="<%=list.price%>">
+        <br>
+        <input type="text"  name="listing[location]" value="<%=list.location%>">
+        <br>
+        <input type="text"  name="listing[country]" value="<%=list.country%>">
+        <br>
+        
+       <b> <label>original image</label></b>
+        <div class="mb-3">
+        <img src="<%= list.image.url %>" style="height: 200px; width: 200px; object-fit: cover" >
+        </div>
+        <br>
+         
+       <b> <label>upload new image</label></b> <br>
+        <input type="file"  name="listing[image][url]"  >
+        <br><br>
+
+        <button class="btn-dark">update</button>
+    </form>
+</div>
+
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+   
+    <div class="bootstrap  row-cols-md-4 ">
+       <div style="background-color: blueviolet ; height: 10px; "></div>
+       <div style="background-color: black ; height: 10px; "></div>
+       <div style="background-color: yellow ; height: 10px; "></div>
+       <div style="background-color: green; height: 10px; "></div>
+    </div>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+
+
+   
+  
+  
+
+
+
+</body>
