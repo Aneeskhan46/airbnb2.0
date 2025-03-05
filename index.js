@@ -52,10 +52,18 @@ app.listen(8080,()=>{
     console.log("listnening anees bhai");
 })
 
-// //home route
-// app.get("/",(req,res)=>{
-//     res.send("hello anees bhai");
-// })
+//home route
+app.get("/",async(req,res)=>{
+    try{
+        const allListing= await listing.find({});
+        res.render("./listing/index.ejs",{allListing});
+    }catch(err) {
+       
+       res.send(err)
+      
+    }
+    res.send("hello anees bhai");
+})
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"/views"))
