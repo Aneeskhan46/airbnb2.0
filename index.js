@@ -53,17 +53,17 @@ app.listen(8080,()=>{
 })
 
 //home route
-app.get("/",async(req,res)=>{
-    try{
-        const allListing= await listing.find({});
-        res.render("./listing/index.ejs",{allListing});
-    }catch(err) {
+// app.get("/",async(req,res)=>{
+//     try{
+//         const allListing= await listing.find({});
+//         res.render("./listing/index.ejs",{allListing});
+//     }catch(err) {
        
-       res.send(err)
+//        res.send(err)
       
-    }
+//     }
    
-})
+// })
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"/views"))
