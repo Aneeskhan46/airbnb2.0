@@ -62,7 +62,7 @@ app.get("/",async(req,res)=>{
        res.send(err)
       
     }
-    res.send("hello anees bhai");
+   
 })
 
 app.set("view engine","ejs");
