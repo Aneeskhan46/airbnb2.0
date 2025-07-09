@@ -349,4 +349,4 @@ const sampleListings = [
     },
   ];
   
-  module.exports = {data:sampleListings} ; //exporting data as a object
+  module.exports = {data:sampleListings} ; //exporting data as a object and we call sample listing as data

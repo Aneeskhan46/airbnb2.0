@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const review=require("./review.js")
 
 
-
+//creating schema
 const listingSchema = new mongoose.Schema({
   title: String,
   description: String,
@@ -31,6 +31,13 @@ const listingSchema = new mongoose.Schema({
 });
 
 
+//creating models
+const Listing = mongoose.model("Listing", listingSchema);
+
+module.exports = Listing;
+
+
+
 //deletion middleware .. whenever we delete listing this middleware triggers and delete all reviews belong to that listing
 listingSchema.post("findOneAndDelete", async(listing)=>{
   if(listing){
@@ -38,6 +45,3 @@ listingSchema.post("findOneAndDelete", async(listing)=>{
   }
 })
 
-const Listing = mongoose.model("Listing", listingSchema);
-
-module.exports = Listing;

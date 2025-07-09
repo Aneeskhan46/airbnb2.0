@@ -207,7 +207,14 @@ app.get("/logout",(req,res)=>{
 // });
 
 
+app.get("/",(req,res)=>{
+    res.render("./listing/root.ejs")
+})
+
 //index route
+
+
+
 app.get("/listings", ( async (req,res,next)=>{
     try{
         const allListing= await listing.find({});
