@@ -21,7 +21,7 @@
 * **MongoDB** – NoSQL database
 * **Middleware** – For authentication, validation, and error handling
 
-
+---
 
 ## ✨ Key Features
 
