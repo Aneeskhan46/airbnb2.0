@@ -3,7 +3,7 @@
 
 **Airbnb 2.0** is a full-stack web application inspired by Airbnb that allows users to explore, list, and manage rental properties. The project focuses on building a real-world booking platform with dynamic content, user interaction, and a scalable backend.
 
-
+---
 
 ## 🚀 Tech Stack
 
